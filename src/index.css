@@ -1,13 +1,180 @@
-body {
+/* Desktop.css */
+.desktop {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  overflow: hidden;
+  background: url('./windows-background.png') center/cover fixed; /* Set your background image path here */
+  position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.screen-off {
+  background: #000; /* Black background when screen is off */
+}
+
+.file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+}
+.file svg {
+  margin-bottom: 8px;
+  font-size: 3em; /* 3 times bigger */
+}
+.file:hover {
+  background-color: rgba(224, 224, 224, 0.116); /* Light gray on hover */
+}
+
+.file svg {
+  margin-bottom: 8px;
+}
+
+.file-name {
+  text-align: center;
+  font-size: 12px;
+}
+
+/* .file-viewer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+.file-viewer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 400px; /* Adjust the width as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.file-viewer .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3498db; /* Blue header */
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px 5px 0 0;
+}
+
+.file-viewer .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.file-viewer .content {
+  margin: 8px 5px;
+}
+
+.file-viewer textarea {
+  width: 90%;
+  min-height: 500px;
+  padding: 8px;
+  color: black;
+  /* border: 1px solid #ddd; */
+  /* border-radius: 5px; */
+  border: 0;
+}
+
+.file-viewer .save-button {
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+.file-viewer .save-button:hover {
+  background-color: #2980b9;
+}
+.context-menu {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.context-menu div {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.context-menu div:last-child {
+  border-bottom: none;
+}
+
+.context-menu div:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+.panel {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.panel div {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.panel div:last-child {
+  border-bottom: none;
+}
+
+.panel div:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #1a1a1a; /* Dark taskbar color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.power-off {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.taskbar-clock {
+  color: #fff;
+  font-size: 14px;
+  margin-right: 45px;
 }
